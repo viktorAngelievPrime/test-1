@@ -1,5 +1,5 @@
 
-### Table of Contents
+## Table of Contents
  
 1. [Intro](#intro)
 2. [Installation](#installation)
