@@ -35,14 +35,14 @@ The finished product should look as such:
 ```
 src
 └─── data
-	 ├─── _                          
+     ├─── _                          
      │    ├─── functions   
      │    │    └─── reaper_framework
      │    └─── modules
      │         └─── reaper_framework
      │
-     │
-	 └─── demo           <------ your project namespace
+     │ 
+     └─── demo           <------ your project namespace
           └─── modules
                └─── main.bolt
 ```
@@ -60,9 +60,13 @@ There is not and will never be support for `.mcfunction` files.
 Allows for quick and easy handling of `load`, `tick` and `load_player` events.
 
 Events:
+
 `Spark.load()`
+
 `Spark.tick()`
+
 `Spark.load_player()`
+
 
 Can be prefixed with `pre` or `post` for ordering:
 ```
