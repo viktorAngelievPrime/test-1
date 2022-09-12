@@ -60,11 +60,9 @@ There is not and will never be support for `.mcfunction` files.
 Allows for quick and easy handling of `load`, `tick` and `load_player` events.
 
 Events:
-```
-	Spark.load()
-	Spark.tick()
-	Spark.load_player()
-```
+`Spark.load()`
+`Spark.tick()`
+`Spark.load_player()`
 
 Can be prefixed with `pre` or `post` for ordering:
 ```
