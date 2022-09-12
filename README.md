@@ -59,27 +59,26 @@ There is not and will never be support for `.mcfunction` files.
 
 Allows for quick and easy handling of `load`, `tick` and `load_player` events.
 
-Events:
+<details>
+<summary>Details</summary><p>
 
-`Spark.load()`
+```py
+# Events:
+	@Spark.load()
+	@Spark.tick()
+	@Spark.load_player()
 
-`Spark.tick()`
-
-`Spark.load_player()`
-
-
-Can be prefixed with `pre` or `post` for ordering:
+# Can be prefixed with 'pre' or 'post' for ordering:
+	@Spark.preload()
+	@Spark.pretick()
+	@Spark.postload_player()
+	
+# Optional 'layer' keyword argument can be used for further ordering:
+# (don't overuse unless necessary)
+	@Spark.load(layer='LIB')
+	@Spark.load(layer='SYSTEM')
 ```
-	Spark.preload()
-	Spark.pretick()
-	Spark.postload_player()
-```
-Optional `layer` keyword argument can be used for further ordering:
-(don't overuse unless necessary)
-```
-	Spark.load(layer='LIB')
-	Spark.load(layer='SYSTEM')
-```
+</p></details>
 
 ### Code example:
 ```py
