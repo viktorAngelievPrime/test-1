@@ -1,7 +1,7 @@
 <img align="right" src="https://raw.githubusercontent.com/reapermc/reaper_framework/master/logo.png" alt="logo" width="192">
 
 ## Intro
-So what is this? It's basically a framework for `bolt`. Featuring modules that allow you to accelerate your development process.
+So what is this? It's basically a framework for [bolt](https://github.com/mcbeet/bolt). Featuring modules that allow you to accelerate your development process.
 
 &nbsp;
 
@@ -42,6 +42,21 @@ src
 &nbsp;
 
 
+## Dependencies
+
+Since the installation process is not a standard one, you will first need to have these installed:
+
+[beet](https://github.com/mcbeet/beet)
+
+[mecha](https://github.com/mcbeet/mecha)
+
+[bolt](https://github.com/mcbeet/bolt)
+
+[bolt_expressions](https://github.com/rx-modules/bolt-expressions)
+
+&nbsp;
+
+
 ## Getting started
 
 I'm no documentation wizard, but check [here](https://github.com/ArcticYeti/test/blob/master/docs.md).
@@ -52,5 +67,3 @@ I'm no documentation wizard, but check [here](https://github.com/ArcticYeti/test
 ## Final note
 
 Huge thanks to the entire [Beet Discord](https://discord.gg/98MdSGMm8j) server for always providing me with the help and resources I needed in order to create this.
-
-Beet is awesome!
