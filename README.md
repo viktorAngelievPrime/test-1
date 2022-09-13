@@ -44,7 +44,7 @@ src
 
 ## Getting started
 
-I'm no documentation wizard, but check [here](https://github.com/ArcticYeti/test/docs.md).
+I'm no documentation wizard, but check [here](https://github.com/ArcticYeti/test/blob/master/docs.md).
 
 &nbsp;
 
