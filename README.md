@@ -29,9 +29,9 @@
 
 
 # Intro
-So what is this? It's basically a framework for `bolt`.
+So what is this? It's basically a framework for `bolt`. Featuring modules that allow you to accelerate your development process.
 
-Featuring modules that allow you to accelerate your development process.
+&nbsp;
 
 This is so far a solo project. It has been in development for months, with hundreds of hours in.
 
