@@ -166,6 +166,8 @@ function ./bolt_expressions_is_awesome:
 
 A handy solution to temporary values.
 
+All vars get wiped upon reloading.
+
 They're basically `bolt_expressions`. One downside though is score comparison with `if`-s, which you can't really do until `bolt_expressions` gets updated to allow that.
 
 <details>
