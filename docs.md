@@ -58,7 +58,7 @@ Allows for quick and easy handling of `load`, `tick` and `load_player` events.
 	@Spark.postload_player()
 	
 # Optional 'layer' keyword argument can be used for further ordering:
-# (don't overuse unless necessary)
+# (generally don't use this unless you're making a library)
 	@Spark.load(layer='LIB')
 	@Spark.load(layer='SYSTEM')
 ```
