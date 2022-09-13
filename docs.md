@@ -1,3 +1,10 @@
+# Reaper Framework Docs
+
+If you have any further questions or need some help, you can hit me up on discord `Yeti#0231`.
+
+I don't yet have a server for the project, but I may make one in the future.
+
+&nbsp;
 
 
 ## Table of Contents
@@ -24,7 +31,7 @@
 &nbsp;
 
 
-# Intro
+## Intro
 So what is this? It's basically a framework for `bolt`. Featuring modules that allow you to accelerate your development process.
 
 &nbsp;
@@ -40,7 +47,7 @@ Feedback is greatly appreciated!
 &nbsp;
 
 
-# Installation
+## Installation
 
 1. Download the [latest release](https://github.com/reapermc/reaper_framework/releases/latest).
 2. Extract the `zip` file inside of your project's `src/data`.
@@ -66,7 +73,7 @@ src
 &nbsp;
 
 
-# Disclaimer
+## Disclaimer
 
 The framework only supports coding using `.bolt` files.
 
@@ -204,9 +211,9 @@ from _:reaper import Var, Scoreboard
 tmp = Var(int_var=True)
 my_score = Scoreboard('my_score')
 
-def  very_primitive_power(val): 	# here Var() lets us skip creating a
-	tmp = val 						# new scoreboard for this operation
-									# and preserves the $old value,
+def  very_primitive_power(val): 		# here Var() lets us skip creating a
+	tmp = val 				# new scoreboard for this operation
+						# and preserves the $old value,
 return tmp * tmp + 10  				# since we're using a 'tmp'
 
 function ./simple_example:
@@ -256,7 +263,7 @@ This one took ages to figure out.
 <summary>Details</summary><p>
 
 ```py
-# Declaring an object (make sure it's declared in the right context):
+# Declaring an object (make sure it's declared AS the right context):
 	as @e[type=zombie]:
 		fake_hp = Object('stat.fake_hp')   # don't forget the nbt path!
 
