@@ -120,11 +120,12 @@ function ./bolt_expressions_is_awesome:
 
 ## Data
 
-A way to import `Data` from [bolt_expressions](https://github.com/rx-modules/bolt-expressions) directly from `reaper`.
+A way to directly import `Data` ([bolt_expressions](https://github.com/rx-modules/bolt-expressions)).
 
-
-
-
+### Code example:
+```py
+from _:reaper import Data
+```
 
 &nbsp;
 
