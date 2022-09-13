@@ -1,6 +1,6 @@
 # Reaper Framework Docs
 
-If you have any further questions or need some help, you can hit me up on discord `Yeti#0231`.
+If you have any further questions or need some help, be sure to hit me up on discord `Yeti#0231`.
 
 I don't yet have a discord server for the project, but I may make one in the future.
 
