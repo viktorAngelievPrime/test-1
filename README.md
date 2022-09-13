@@ -34,6 +34,7 @@ So what is this? It's basically a framework for `bolt`.
 Featuring modules that allow you to accelerate your development process.
 
 This is so far a solo project. It has been in development for months, with hundreds of hours in.
+
 I would genuinely be the happiest person ever to find out it helped someone out there. I put my heart into this one.
 
 Feedback is greatly appreciated!
