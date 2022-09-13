@@ -2,26 +2,22 @@
 
 ## Table of Contents
  
-1. [Intro](#intro)
-2. [Installation](#installation)
-3. [Disclaimer](#disclaimer)
-4. [Modules](#modules)
+- [Intro](#intro)
+- [Installation](#installation)
+- [Disclaimer](#disclaimer)
+- [Modules](#modules)
 
-	4.1. [Spark](#spark)
-
-	4.2. [Scoreboard](#scoreboard)
-
-	4.3. [Var](#var)
-
-	4.4. [Object](#object)
-
-	4.5. [Sleep](#sleep)
-
-	4.6. [Loop](#loop)
-
-	4.7. [Halt](#halt)
-
-	4.8. [Cmd](#cmd)
+	- [Spark](#spark)
+	- [Scoreboard](#scoreboard)
+	- [Data](#data)
+	- [Var](#var)
+	- [Object](#object)
+	- [Sleep](#sleep)
+	- [Loop](#loop)
+	- [Halt](#halt)
+	- [Cmd](#cmd)
+	- [Array](#array)
+	- [File](#file)
 
 
 
@@ -125,7 +121,7 @@ def greeter():
 
 ## Scoreboard
 
-Upgraded version of `Scoreboard` from `bolt_expressions`. Automatically creates objectives.
+Upgraded version of `Scoreboard` from [bolt_expressions](https://github.com/rx-modules/bolt-expressions). Automatically creates objectives.
 
 <details>
 <summary>Details</summary><p>
@@ -161,14 +157,25 @@ function ./bolt_expressions_is_awesome:
 
 &nbsp;
 
+## Data
+
+A way to import `Data` from [bolt_expressions](https://github.com/rx-modules/bolt-expressions) directly from `reaper`.
+
+
+
+
+
+&nbsp;
+
 
 ## Var
 
-A handy solution to temporary values.
+A handy solution to scores/storages when you don't feel like declaring the name!
+
+At the core they're `expressions` from [bolt_expressions](https://github.com/rx-modules/bolt-expressions).
 
 All vars get wiped upon reloading.
 
-They're basically `bolt_expressions`. One downside though is score comparison with `if`-s, which you can't really do until `bolt_expressions` gets updated to allow that.
 
 <details>
 <summary>Details</summary><p>
@@ -179,7 +186,14 @@ They're basically `bolt_expressions`. One downside though is score comparison wi
 
 # You can also limit the variable to an 'int_var' for more optimization:
 	tmp_hp = Var(int_var=True)
+
+# Comparing scores is a bit trickier, you need to use the `.holder` & `.obj` attributes.
+	tmp_hp = var(int_var=True)
+
+	if score tmp_hp.holder tmp_hp.obj matches 1..:
+		...
 ```
+			     
 </p></details>
 
 
@@ -209,6 +223,34 @@ Fully functional custom `nbt` support for entities.
 
 This one took ages to figure out.
 
+&nbsp;
+
+**IMPORTANT**: Make sure your entity death `loot table`-s contain this `json` snippet, marking them as a `death_loot_table`. Not doing so will result in severely decreased performance overtime.
+
+```json
+{
+	"reaper": {
+		"death_loot_table": true
+	}
+}
+```
+
+<details>
+<summary>Death Loot Table Example</summary><p>
+
+```json
+{
+	"reaper": {
+		"death_loot_table": true
+	}
+
+	"type":  "minecraft:entity",
+		"pools": []
+}
+```
+</p></details>
+
+&nbsp;
 
 <details>
 <summary>Details</summary><p>
@@ -228,24 +270,6 @@ This one took ages to figure out.
 ```
 </p></details>
 
-
-The system requires you add this code to your entity `loot_table`-s, marking them for cleanup after death. This is important for `Object` cleanup upon entity death and with that, optimal performance.
-
-<details>
-<summary>Loot Table Example</summary><p>
-
-```json
-{
-	"reaper": { 					# required
-		"death_loot_table": true    # piece of
-} 									# code
-"type":  "minecraft:entity",
-	"pools": [
-		...
-	]
-}
-```
-</p></details>
 
 ### Code example:
 ```py
@@ -408,8 +432,8 @@ Pythonized version of minecraft commands. Their advantage is being passable as f
 		Cmd.untag(name)
 
 	# time:
-		Cmd.get_time()
-		Cmd.set_time(mode) 	 # 'day', 'gametime', 'daytime' (DEFAULT)
+		Cmd.get_time(mode) 	# 'day', 'gametime', 'daytime' (DEFAULT)
+		Cmd.set_time()
 ```
 </p></details>
 
@@ -425,5 +449,83 @@ function ./pythonized_commands:
 	Cmd.set_time(666)
 	Cmd.set_time(get_time() - 69)
 ```
+
+&nbsp;
+
+
+## Array
+
+Useful higher level tools for array operations.
+
+<details>
+<summary>Details</summary><p>
+
+```py
+# Currently supported operations:
+	Array.min(target_array)
+	Array.min_index(target_array)
+	Array.del_index(target_array, index)
+```
+</p></details>
+
+### Code example:
+```py
+from _:reaper import Data, Scoreboard, Array
+
+my_array = Data.storage('test:test').my_array
+my_score = Scoreboard('test')['$my_score']
+
+function ./array_operations:
+	my_array = [666, 69, 420, 1337]
+	
+	# retrieves the smallest int
+	my_score = Array.min(my_array)				# out: 69
+
+	
+	# retrieves the index of the smallest int
+	my_score = Array.min_index(my_array)			# out: 1
+	
+	
+	# deletes the value at a specified index
+	Array.del_index(my_array, 3)				# deleted: 420
+
+	# supports dynamic index
+	Array.del_index(my_array, Array.min_index(my_array)) 	# deleted: 69
+
+```
+
+&nbsp;
+
+
+## File
+
+Simple interface for reading & writing files.
+
+<details>
+<summary>Details</summary><p>
+
+```py
+# File(path()
+# It can be used alongside the 'with' statement similarly to python's 'open()'
+# If for whatever reason you're not using 'with', don't forget to close the file lol.
+
+# The working directory is the project directory
+```
+</p></details>
+
+### Code example:
+```py
+from _:reaper import File
+
+with File('random_file.txt') as f:
+	f.write('hello, here go contents of the file')
+
+with File('config/bosses/kamikaze_sheep.json') as f:
+	sheep_boss_data = f.read()
+```
+
+
+
+
 
 
