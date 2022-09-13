@@ -71,6 +71,7 @@ src
 # Disclaimer
 
 The framework only supports coding using `.bolt` files.
+
 There is not and will never be support for `.mcfunction` files.
 
 &nbsp;
