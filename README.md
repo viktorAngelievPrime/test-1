@@ -37,6 +37,8 @@ This is so far a solo project. It has been in development for months, with hundr
 
 I would genuinely be the happiest person ever to find out it helped someone out there. I put my heart into this one.
 
+&nbsp;
+
 Feedback is greatly appreciated!
 
 &nbsp;
