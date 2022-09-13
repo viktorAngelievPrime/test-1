@@ -146,7 +146,7 @@ All vars get wiped upon reloading.
 # Declaring is fairly simple:
 	tmp_hp = Var()
 
-# You can also limit the variable to an 'int_var' for more optimization:
+# You can also declare the variable as an 'int' for more optimization:
 	tmp_hp = Var(int_var=True)
 
 # Comparing scores is a bit trickier, you need to use the `.holder` & `.obj` attributes.
